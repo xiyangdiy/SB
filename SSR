@@ -1,0 +1,17 @@
+CentOS 7  X64   SS   锐速
+
+修改密码:passwd
+
+wget --no-check-certificate -O shadowsocks-libev_CN.sh https://raw.githubusercontent.com/uxh/shadowsocks_bash/master/shadowsocks-libev_CN.sh && bash shadowsocks-libev_CN.sh
+
+1
+
+密码:
+
+端口：80
+
+加密：3
+
+wget --no-check-certificate -O rskernel.sh https://raw.githubusercontent.com/uxh/shadowsocks_bash/master/rskernel.sh && bash rskernel.sh
+
+yum install net-tools -y && wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh && bash appex.sh install
