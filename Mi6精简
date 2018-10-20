@@ -45,4 +45,6 @@ rm -rf /system/priv-app/YellowPage
 rm -rf /system/priv-app/WeatherProvider
 rm -rf /system/priv-app/Weather
 rm -rf /system/priv-app/QuickSearchBox
+rm -rf /system/app/MSA
+rm -rf /system/app/mab
 reboot
