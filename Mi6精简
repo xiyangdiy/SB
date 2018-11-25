@@ -1,3 +1,4 @@
+关闭上划手势
 mount -o rw,remount /system
 rm -rf /system/app/AnalyticsCore
 rm -rf /system/app/BasicDreams
@@ -21,7 +22,6 @@ rm -rf /system/app/SecurityAdd
 rm -rf /system/app/Stk
 rm -rf /system/app/TSMClient
 rm -rf /system/app/Updater
-rm -rf /system/app/UserDictionaryProvider
 rm -rf /system/app/Userguide
 rm -rf /system/app/VipAccount
 rm -rf /system/app/VirtualSim
