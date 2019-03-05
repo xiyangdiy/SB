@@ -29,7 +29,6 @@ rm -rf /system/app/WAPPushManager
 rm -rf /system/app/xdivert
 rm -rf /system/app/XMPass
 rm -rf /system/priv-app/Browser
-rm -rf /system/priv-app/CalendarProvider
 rm -rf /system/priv-app/CallLogBackup
 rm -rf /system/priv-app/MiGameCenterSDKService
 rm -rf /system/priv-app/MiuiVideo
