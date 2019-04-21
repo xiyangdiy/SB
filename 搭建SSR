@@ -22,4 +22,4 @@ wget --no-check-certificate -O rskernel.sh https://raw.githubusercontent.com/uxh
 
 yum install net-tools -y && wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh && bash appex.sh install
 
-默认YES
+回车键默认
