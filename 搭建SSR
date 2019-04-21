@@ -1,17 +1,25 @@
 CentOS 7  X64   SS   锐速
 
-修改密码:passwd
+修改SSH密码:passwd
+
+1.安装shadowsocks
 
 wget --no-check-certificate -O shadowsocks-libev_CN.sh https://raw.githubusercontent.com/uxh/shadowsocks_bash/master/shadowsocks-libev_CN.sh && bash shadowsocks-libev_CN.sh
 
-1
-
 密码:
 
-端口：80
+端口：
 
 加密：3
 
+2.降级系统内核
+
 wget --no-check-certificate -O rskernel.sh https://raw.githubusercontent.com/uxh/shadowsocks_bash/master/rskernel.sh && bash rskernel.sh
 
+等待重启......
+
+3.安装锐速
+
 yum install net-tools -y && wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh && bash appex.sh install
+
+默认YES
