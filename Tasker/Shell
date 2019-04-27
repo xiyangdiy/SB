@@ -1,0 +1,2 @@
+等待N秒:sleep N
+点击坐标(X,Y):input tap X Y
