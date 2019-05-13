@@ -1,1 +1,2 @@
 电脑激活剩余时间:slmgr.vbs -xpr
+电脑激活信息: slmgr.vbs -dlv
