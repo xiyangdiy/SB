@@ -1,4 +1,4 @@
-CentOS 7  X64   SS   锐速
+CentOS 6/7  X64   SS   锐速/Google BBR
 
 修改SSH密码:passwd
 
@@ -8,18 +8,72 @@ wget --no-check-certificate -O shadowsocks-libev_CN.sh https://raw.githubusercon
 
 密码:
 
-端口：
+端口：不要使用22端口，常用80/443/8080
 
 加密：3
 
-2.降级系统内核
+2.判断系统类型
 
-wget --no-check-certificate -O rskernel.sh https://raw.githubusercontent.com/uxh/shadowsocks_bash/master/rskernel.sh && bash rskernel.sh
+uname -r
 
-等待重启......
+回车后输出当前系统内核版本。主要分三种情况：
+结果以 2 开头，例如 2.6.32-696.18.7.el6.x86_64。服务器为 CentOS 6 x64 系统
+结果以 3 开头，例如 3.10.0-693.11.6.el7.x86_64。服务器为 CentOS 7 x64 系统
+结果以 4 开头，例如 4.12.10-1.el7.elrepo.x86_64。服务器已安装 Google BBR 拥塞控制算法，此时无法安装锐速
 
-3.安装锐速
+3.CentOS 6 x64 系统安装锐速
 
-yum install net-tools -y && wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh && bash appex.sh install
+wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh && bash appex.sh install '2.6.32-642.el6.x86_64'
 
 回车键默认
+
+4.CentOS 7 x64 系统安装锐速
+
+ （1）降级系统内核
+
+  wget --no-check-certificate -O rskernel.sh https://raw.githubusercontent.com/uxh/shadowsocks_bash/master/rskernel.sh && bash rskernel.sh
+
+  等待重启......
+
+ （2）安装锐速
+
+  yum install net-tools -y && wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh && bash appex.sh install
+
+  回车键默认
+  
+5.安装原版 Google BBR
+
+wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+
+回车键默认
+
+最后输入"y"，回车确认重启
+
+重新连接服务器，然后依次运行下列命令并对比输出值是否一致
+
+sysctl net.ipv4.tcp_available_congestion_control
+执行后输出值需为：net.ipv4.tcp_available_congestion_control=reno cubic bbr
+
+sysctl net.ipv4.tcp_congestion_control
+执行后输出值需为：net.ipv4.tcp_congestion_control=bbr
+
+sysctl net.core.default_qdisc
+执行后输出值需为：net.core.default_qdisc=fq
+
+以上三条命令的输出值正确后则说明原版 Google BBR 已经成功安装并开机自启动
+
+6.安装魔改版 Google BBR
+
+ （1）安装系统内核
+
+  wget --no-check-certificate https://raw.githubusercontent.com/nanqinlang-tcp/tcp_nanqinlang/master/General/CentOS/bash/tcp_nanqinlang-1.3.2.sh && bash tcp_nanqinlang-1.3.2.sh
+
+  选择:1
+  
+  重启:reboot
+  
+ （2）开启算法
+ 
+  bash tcp_nanqinlang-1.3.2.sh
+  
+  选择:2
