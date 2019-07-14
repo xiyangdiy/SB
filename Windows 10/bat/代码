@@ -1,0 +1,4 @@
+格式:@echo off #开头#
+     pause #结尾#
+输出内容:echo 内容
+输出空行:echo.
