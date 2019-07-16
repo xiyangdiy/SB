@@ -218,7 +218,7 @@ fi
 
 download_supersu() {
 	supersu_url="https://raw.githubusercontent.com/xiyangdiy/Save/master/SuperSU/SuperSU-v2.82-SR5.zip"
-	supersu_correct_size=6882992
+	supersu_correct_size=6938039
 
 	echo "Downloading SuperSU-v2.82-SR5"
 	mkdir -p /tmp/aroc
