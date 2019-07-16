@@ -227,7 +227,7 @@ download_supersu() {
 }
 
 # Copy the required files over to ~/Downloads
-
+cd /tmp/aroc/SuperSU
 cp -r -a common /home/chronos/user/Downloads
   
 if [ $ANDROID_ARCH=armv7 ]; then
