@@ -218,34 +218,13 @@ fi
 
 download_supersu() {
 	supersu_url="https://raw.githubusercontent.com/xiyangdiy/Save/master/SuperSU/SuperSU-v2.82-SR5.zip"
-	supersu_correct_size=6938039
 
 	echo "Downloading SuperSU-v2.82-SR5"
 	mkdir -p /tmp/aroc
 	cd /tmp/aroc
 	curl "$supersu_url" -o SuperSU.zip
-
-	# Check filesize
-	supersu_size=$(stat -c %s /tmp/aroc/SuperSU.zip)
-
-	if [ "$supersu_size" = "$supersu_correct_size" ]; then
-		echo "Unzipping SuperSU zip, and copying required directories to ~/Downloads."
-		/usr/local/bin/busybox unzip SuperSU.zip
-	else
-		echo "Unexpected file size. Trying again..."
-		curl "$supersu_url" -o SuperSU.zip
-	fi
-
-	# Check filesize again...
-	supersu_size=$(stat -c %s /tmp/aroc/SuperSU.zip)
-
-	if [ "$supersu_size" = "$supersu_correct_size" ]; then
-		echo "Unzipping SuperSU zip, and copying required directories to ~/Downloads."
-		/usr/local/bin/busybox unzip SuperSU.zip
-	else
-		echo "Unexpected file size again! You can manually download the SuperSU zip and extract its directories to ~/Downloads. Then run this script again."
-		exit 1
-	fi
+	echo "Unzipping SuperSU zip, and copying required directories to ~/Downloads."
+	/usr/local/bin/busybox unzip SuperSU.zip
 
 # Copy the required files over to ~/Downloads
 
