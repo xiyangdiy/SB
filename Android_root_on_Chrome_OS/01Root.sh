@@ -219,13 +219,13 @@ download_supersu() {
 echo "Downloading SuperSU-v2.82-SR5"
 mkdir -p /tmp/aroc
 cd /tmp/aroc
-curl https://raw.githubusercontent.com/xiyangdiy/Save/master/SuperSU/SuperSU-v2.82-SR5.zip -o SuperSU.zip
-echo "Unzipping SuperSU zip, and copying required directories to ~/Downloads."
-/usr/local/bin/busybox unzip -v SuperSU.zip
+curl https://raw.githubusercontent.com/xiyangdiy/Save/master/SuperSU/SuperSU-v2.82-SR5.tar.gz -o SuperSU.tar.gz
+echo "Unzipping SuperSU.tar.gz, and copying required directories to ~/Downloads."
+tar -xzvf SuperSU.tar.gz
 
 
 # Copy the required files over to ~/Downloads
-cd /tmp/aroc/
+
 cp -r -a common /home/chronos/user/Downloads
   
 if [ $ANDROID_ARCH=armv7 ]; then
