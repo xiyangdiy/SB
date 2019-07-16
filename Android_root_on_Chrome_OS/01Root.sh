@@ -225,7 +225,7 @@ curl https://raw.githubusercontent.com/xiyangdiy/Save/master/SuperSU/SuperSU-v2.
 
 supersu_size=$(stat -c %s /tmp/aroc/SuperSU.zip)
 
-if [ $supersu_size = 6918737 ]; then
+if [ $supersu_size = 6938039 ]; then
   echo "Unzipping SuperSU zip, and copying required directories to ~/Downloads."
   /usr/local/bin/busybox unzip SuperSU.zip
   else
@@ -237,7 +237,7 @@ fi
 
 supersu_size=$(stat -c %s /tmp/aroc/SuperSU.zip)
 
-if [ $supersu_size = 6918737 ]; then
+if [ $supersu_size = 6938039 ]; then
   echo "Unzipping SuperSU zip, and copying required directories to ~/Downloads."
   /usr/local/bin/busybox unzip SuperSU.zip
   else
