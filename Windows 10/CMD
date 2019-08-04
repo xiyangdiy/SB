@@ -1,6 +1,6 @@
 电脑激活剩余时间:slmgr.vbs -xpr
 电脑激活信息: slmgr.vbs -dlv
-显示Win10隐藏的电源计划:
+显示Win10隐藏的电源计划(只执行一次!!!):
     节能: powercfg -duplicatescheme a1841308-3541-4fab-bc81-f71556f20b4a
     高性能: powercfg -duplicatescheme  8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
     卓越性能: powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
