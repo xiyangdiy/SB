@@ -22,6 +22,7 @@
             echo 2.退出
             set /p a=选择相应数字：
             if /i "%a%"=="1" goto a1 (:a1代码段)
-            if /i "%a%"=="2" goto
-
+            if /i "%a%"=="2" goto 
+息屏:powershell (Add-Type '[DllImport(\"user32.dll\")]^public static extern int SendMessage(int hWnd, int hMsg, int wParam, int lParam);' -Name a -Pas)::SendMessage(-1,0x0112,0xF170,2)
+锁屏:rundll32 user32.dll,LockWorkStation
 
