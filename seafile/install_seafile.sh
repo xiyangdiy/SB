@@ -22,10 +22,10 @@ function chk_firewall() {
 #安装seafile函数
 function install_sea() {
 	cd /home/Seafile
-	#下载安装包6.3.3 64bit
-	wget http://seafile-downloads.oss-cn-shanghai.aliyuncs.com/seafile-server_6.3.3_x86-64.tar.gz
+	#下载安装包7.0.5 64bit
+	wget http://seafile-downloads.oss-cn-shanghai.aliyuncs.com/seafile-server_7.0.5_x86-64.tar.gz
 	#解压
-	tar -zxvf seafile-server_6.3.3_x86-64.tar.gz
+	tar -zxvf seafile-server_7.0.5_x86-64.tar.gz
 	mkdir installed
 	mv seafile-server*.tar.gz ./installed
 	mv seafile-server-6* seafile-server
