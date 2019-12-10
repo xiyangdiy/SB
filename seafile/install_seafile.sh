@@ -21,7 +21,7 @@ function chk_firewall() {
 
 #安装seafile函数
 function install_sea() {
-	cd /home/MyCloud
+	cd /home/Seafile
 	#下载安装包6.3.3 64bit
 	wget http://seafile-downloads.oss-cn-shanghai.aliyuncs.com/seafile-server_6.3.3_x86-64.tar.gz
 	#解压
@@ -39,8 +39,8 @@ function install_sea() {
 	#防火墙放行端口
 	chk_firewall
 	#开机启动
-	echo "/home/MyCloud/seafile-server/seafile.sh start" >> /etc/rc.d/rc.local
-	echo "/home/MyCloud/seafile-server/seahub.sh start" >> /etc/rc.d/rc.local
+	echo "/home/Seafile/seafile-server/seafile.sh start" >> /etc/rc.d/rc.local
+	echo "/home/Seafile/seafile-server/seahub.sh start" >> /etc/rc.d/rc.local
 	chmod u+x /etc/rc.d/rc.local
 	#获取IP
 	osip=$(curl https://api.ip.sb/ip)
@@ -49,32 +49,32 @@ function install_sea() {
 	echo "------------------------------------------------------"
 }
 
-echo "##########	欢迎使用Seafile一键安装脚本^_^	##########"
+echo "##########	Seafile一键安装脚本	##########"
 
 echo "1.安装Seafile"
 echo "2.卸载Seafile"
 echo "3.退出"
 declare -i stype
-read -p "请输入选项:（1.2.3）:" stype
+read -p "请输入选项:" stype
 
 if [ "$stype" == 1 ]
 	then
 		#检查目录是否存在
-		if [ -e "/home/MyCloud" ]
+		if [ -e "/home/Seafile" ]
 			then
 			echo "目录存在，请检查是否已经安装。"
 			exit
 		else
 			echo "目录不存在，创建目录..."
-			mkdir -p /home/MyCloud
+			mkdir -p /home/Seafile
 			#执行安装函数
 			install_sea
 		fi
 	elif [ "$stype" == 2 ]
 		then
-			/home/MyCloud/seafile-server/seafile.sh stop
-			/home/MyCloud/seafile-server/seahub.sh stop
-			rm -rf /home/MyCloud
+			/home/Seafile/seafile-server/seafile.sh stop
+			/home/Seafile/seafile-server/seahub.sh stop
+			rm -rf /home/Seafile
 			rm -rf /tmp/seahub_cache/*
 			echo '卸载完成.'
 			exit
