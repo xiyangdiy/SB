@@ -28,3 +28,9 @@
 锁屏:rundll32 user32.dll,LockWorkStation
 延迟10秒:ping -n 11 127.1 >nul (11-1=10)
 
+当前盘符：%~d0
+当前路径：%cd%
+当前执行命令行：%0
+当前bat文件路径：%~dp0
+当前bat文件短路径：%~sdp0
+
